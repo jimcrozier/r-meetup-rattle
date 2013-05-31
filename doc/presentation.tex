@@ -1,0 +1,170 @@
+\documentclass[xcolor=dvipsnames]{beamer} 
+ 
+\usetheme{Goettingen}
+% AnnArbor, Antibes, Bergen, Berkeley, Berlin, Boadilla, CambridgeUS, Copenhagen, 
+% Darmstadt, default, Dresden, Frankfurt, Goettingen, Hannover, Ilmenau, JuanLesPins, 
+% Luebeck, Madrid, Malmoe, Marburg, Montpellier, PaloAlto, Pittsburgh, Rochester, 
+% Singapore, Szeged, Warsaw
+ 
+\usefonttheme{serif}
+% serif, euler, newcent, avant, helvet, palatino, bookman, mathtime, pifont, chancery, charter, mathptm, mathptmx, utopia
+ 
+\usecolortheme[named=RoyalBlue]{structure}
+% or \usercolortheme{lily}
+% albatross, beaver, beetle, crane, default, dolphin, dove, fly, lily, orchid, rose, seagull, seahorse, whale, wolverine
+ 
+% see http://language.dyndns.org/research/latex/docs/beamerColor.pdf
+\setbeamertemplate{items}[ball] 
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+ 
+\usepackage{amsthm,amsmath,amsfonts} % AMSLaTeX packages
+\usepackage{graphicx} % we want to use images
+ 
+% PDF settings
+\hypersetup{%
+    pdftitle={R for Exploratory Data Analysis},%
+    pdfauthor={Jim Crozier},%
+    pdfsubject={},%
+    pdfkeywords={}%
+}
+ 
+% \mode
+% \mode
+\setbeamertemplate{footline} {%
+  \leavevmode%
+  \hbox{\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshortinstitute \hfill \insertframenumber/\inserttotalframenumber
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+ 
+% \logo{\includegraphics[width=0.3in]{latexImg/GCLogoShort.eps}}
+ 
+\usepackage{tree-dvips,graphicx,color,qtree,apacite,algorithm,algorithmic,multirow,tipa,vowel}
+ 
+\newcommand{\subscript}[1]{{\textnormal{\scriptsize{#1}}}}  % for writing subscript text
+ 
+% from http://blog.miliauskas.lt/2008/09/python-syntax-highlighting-in-latex.html
+% http://www.ctan.org/tex-archive/macros/latex/contrib/listings/listings.pdf
+ 
+\usepackage{textcomp}
+\usepackage{setspace}
+ 
+% \usepackage{cite}
+\usepackage{natbib}
+\renewcommand{\bibfont}{\tiny}
+ 
+
+ 
+%%%%%%%%%%%%%%%%%%%%
+% the paper title
+%%%%%%%%%%%%%%%%%%%%
+\title{R for Exploratory Data Analysis}
+% \subtitle{}
+\author{Jim Crozier}
+\institute[Stratusfy LLC jim@stratusfy.com]{Stratusfy: Data Science and Cloud Technology.}
+\date{\today}
+ 
+%%%%%%%%%%%%%%%%%%%%
+% body
+%%%%%%%%%%%%%%%%%%%%
+\usepackage{Sweave}
+\begin{document}
+\input{presentation-concordance}
+ 
+\begin{frame}
+% \begin{frame}[allowframebreaks,allowdisplaybreaks]
+% \begin{frame}[shrink=5]
+    \titlepage
+\end{frame}
+ 
+\section{Introduction}
+\begin{frame}[t,allowframebreaks]{Overview}
+\begin{block}{Quick Notes}
+Code and documentation available at github/jimcrozier/r-meetup-rattle
+\end{block}
+
+\begin{block}{Topics}
+Three topics for data exploration:
+\end{block}
+ 
+\begin{itemize}
+    \item rattle package
+    \item knitr package
+    \item shiny application
+\end{itemize}
+
+\begin{block}{Bonus:}
+Bonus: R + javascript for geomapping
+\end{block}
+ 
+\end{frame}
+
+\section{Topics: rattle}
+\begin{frame}[t,allowframebreaks]{rattle}
+\begin{block}{rattle Overview }
+rattle is a free gui available from Togaware for R
+\end{block}
+
+\begin{itemize}
+\item I am not a rattle expert
+\item Loads of example available online
+\item Covering the very basics here
+\end{itemize}
+\begin{block}{Getting started }
+Install and load gui
+\end{block}
+
+install.packages(rattle, dependencies=T)
+
+\begin{itemize}
+\item This takes some time due to the large number of dependencies
+\end{itemize}
+rattle()
+
+\begin{block}{Make it work}
+Live demo
+\end{block}
+data(iris)
+
+\end{frame}
+
+
+\section{Topics: knitr}
+\begin{frame}[t,allowframebreaks]{knitr}
+\begin{block}{Overview }
+knitr is a single best tool that you can learn
+\end{block}
+\begin{block}{Overview }
+copy and paste rattle log into block
+\end{block}
+
+\begin{itemize}
+\item Convert crs and crv to list()
+\item Still working out kinks with plots
+\end{itemize}
+\begin{block}{Overview }
+Tip: use cat() to write out .tex and looping to create integrated EDA
+\end{block}
+"Intelligence is the faculty of making artificial objects, especially tools to make tools." - Henri Bergson
+\end{frame}
+
+
+\section{Topics: shiny}
+\begin{frame}[t,allowframebreaks]{shiny}
+\end{frame}
+
+\section{Bonus: javascript with R}
+\begin{frame}[t,allowframebreaks]{Javascript with R}
+\end{frame}
+
+\section{Sources}
+\footnotesize
+\begin{frame}[t,allowframebreaks]{Bibliography}
+\bibliographystyle{apalike}
+\bibliography{/Volumes/MYUSB/700LaTeX/mybibtex.bib}
+\end{frame}
+ 
+\end{document}

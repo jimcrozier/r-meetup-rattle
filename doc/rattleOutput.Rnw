@@ -1,0 +1,265 @@
+\documentclass{article}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+Output from rattle
+
+<<mychunk, fig=TRUE,echo=FALSE>>=
+data(iris)
+
+
+
+
+
+library(rattle)
+
+building <- TRUE
+
+
+
+
+library(colorspace)
+
+
+
+crv = list(seed = 42 )
+
+
+
+
+# Load an R data frame.
+
+crs = list(dataset= iris)
+
+# Display a simple summary (structure) of the dataset.
+
+str(crs$dataset)
+
+
+
+
+# Note the user selections. 
+
+
+
+set.seed(crv$seed) 
+crs$nobs <- nrow(crs$dataset) 
+crs$sample <- crs$train <- sample(nrow(crs$dataset), 0.7*crs$nobs) 
+crs$validate <- sample(setdiff(seq_len(nrow(crs$dataset)), crs$train), 0.15*crs$nobs) 
+crs$test <- setdiff(setdiff(seq_len(nrow(crs$dataset)), crs$train), crs$validate) 
+
+# The following variable selections have been noted.
+
+crs$input <- c("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width")
+
+crs$numeric <- c("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width")
+
+crs$categoric <- NULL
+
+crs$target  <- "Species"
+crs$risk    <- NULL
+crs$ident   <- NULL
+crs$ignore  <- NULL
+crs$weights <- NULL
+
+
+
+
+# Note the user selections. 
+
+
+
+set.seed(crv$seed) 
+crs$nobs <- nrow(crs$dataset) # 150 observations 
+crs$sample <- crs$train <- sample(nrow(crs$dataset), 0.7*crs$nobs) 
+crs$validate <- sample(setdiff(seq_len(nrow(crs$dataset)), crs$train), 0.15*crs$nobs) # 22 observations
+crs$test <- setdiff(setdiff(seq_len(nrow(crs$dataset)), crs$train), crs$validate) 
+
+# The following variable selections have been noted.
+
+crs$input <- c("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width")
+
+crs$numeric <- c("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width")
+
+crs$categoric <- NULL
+
+crs$target  <- "Species"
+crs$risk    <- NULL
+crs$ident   <- NULL
+crs$ignore  <- NULL
+crs$weights <- NULL
+
+
+
+
+# The 'Hmisc' package provides the 'contents' function.
+
+require(Hmisc, quietly=TRUE)
+
+# Obtain a summary of the dataset.
+
+contents(crs$dataset[crs$sample, c(crs$input, crs$risk, crs$target)])
+summary(crs$dataset[crs$sample, c(crs$input, crs$risk, crs$target)])
+
+# The 'amap' package provides the 'hclusterpar' function.
+
+require(amap, quietly=TRUE)
+
+
+
+# Hierarchical Cluster 
+
+# Generate a hierarchical cluster of the data.
+
+crs$hclust <- hclusterpar(na.omit(crs$dataset[crs$sample, crs$numeric]), 
+    method="euclidean", link="ward", nbproc=1)
+
+ 
+
+# Dendrogram Plot 
+
+# The 'ggplot2' package provides the 'ggplot' function.
+
+require(ggplot2, quietly=TRUE)
+
+# The 'ggdendro' package provides the 'dendro_data' function.
+
+require(ggdendro, quietly=TRUE)
+
+# Generate the dendrogram plot.
+
+ddata <- dendro_data(crs$hclust, type="rectangle")
+g <- ggplot(segment(ddata))
+g <- g + geom_segment(aes(x = y, y = x, xend = yend, yend = xend))
+g <- g + scale_y_discrete(labels = ddata$label$label)
+g <- g + labs(x="Height", y="Observation")
+g <- g + ggtitle(expression(atop("Cluster Dendrogram iris", atop(italic("Rattle 2013-May-31 09:04:56 Jim")))))
+print(g)
+
+# The 'fpc' package provides the 'cluster.stats' function.
+
+require(fpc, quietly=TRUE)
+
+# List the suggested cluster centers for each cluster
+
+centers.hclust(na.omit(crs$dataset[crs$sample, crs$numeric]), crs$hclust, 10)
+
+# Generate cluster statistics using the fpc package.
+
+cluster.stats(dist(na.omit(crs$dataset[crs$sample, crs$numeric])), cutree(crs$hclust, 10))
+
+
+
+
+
+# KMeans 
+
+# Reset the random number seed to obtain the same results each time.
+
+set.seed(crv$seed)
+
+# Generate a kmeans cluster of size 10.
+
+crs$kmeans <- kmeans(na.omit(crs$dataset[crs$sample, crs$numeric]), 10)
+
+
+
+
+# Report on the cluster characteristics. 
+
+# Cluster sizes:
+
+paste(crs$kmeans$size, collapse=' ')
+
+# Data means:
+
+colMeans(na.omit(crs$dataset[crs$sample, crs$numeric]))
+
+# Cluster centers:
+
+crs$kmeans$centers
+
+# Within cluster sum of squares:
+
+crs$kmeans$withinss
+
+# Time taken: 0.00 secs
+
+
+
+
+# Display a scatterplot matrix for the KMeans clustering. 
+
+# Generate a data plot.
+
+plot(na.omit(crs$dataset[crs$sample, intersect(crs$input, crs$numeric)]), col=crs$kmeans$cluster)
+title(main="",
+    sub=paste("Rattle", format(Sys.time(), "%Y-%b-%d %H:%M:%S"), Sys.info()["user"]))
+
+# The 'fpc' package provides the 'plotcluster' function.
+
+require(fpc, quietly=TRUE)
+
+# Generate a discriminant coordinates plot.
+
+plotcluster(na.omit(crs$dataset[crs$sample, intersect(crs$input, crs$numeric)]), crs$kmeans$cluster)
+title(main="Discriminant Coordinates iris",
+    sub=paste("Rattle", format(Sys.time(), "%Y-%b-%d %H:%M:%S"), Sys.info()["user"]))
+
+
+# Rattle timestamp: 2013-05-31 09:05:37 x86_64-w64-mingw32 
+
+# Random Forest 
+
+# The 'randomForest' package provides the 'randomForest' function.
+
+require(randomForest, quietly=TRUE)
+
+# Build the Random Forest model.
+
+set.seed(crv$seed)
+crs$rf <- randomForest(Species ~ .,
+      data=crs$dataset[crs$sample,c(crs$input, crs$target)], 
+      ntree=500,
+      mtry=2,
+      importance=TRUE,
+      na.action=na.roughfix,
+      replace=FALSE)
+
+# Generate textual output of 'Random Forest' model.
+
+crs$rf
+
+# List the importance of the variables.
+
+rn <- round(importance(crs$rf), 2)
+rn[order(rn[,3], decreasing=TRUE),]
+
+# Time taken: 0.25 secs
+
+
+# Rattle timestamp: 2013-05-31 09:05:56 x86_64-w64-mingw32 
+
+# Evaluate model performance. 
+
+# Generate an Error Matrix for the Random Forest model.
+
+# Obtain the response from the Random Forest model.
+
+crs$pr <- predict(crs$rf, newdata=na.omit(crs$dataset))
+
+# Generate the confusion matrix showing counts.
+
+table(na.omit(crs$dataset)$Species, crs$pr,
+        dnn=c("Actual", "Predicted"))
+
+# Generate the confusion matrix showing percentages.
+
+round(100*table(na.omit(crs$dataset)$Species, crs$pr, 
+        dnn=c("Actual", "Predicted"))/length(crs$pr))
+@
+
+
+
+\end{document}
