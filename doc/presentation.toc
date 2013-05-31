@@ -4,4 +4,3 @@
 \beamer@sectionintoc {3}{Topics: knitr}{5}{0}{3}
 \beamer@sectionintoc {4}{Topics: shiny}{6}{0}{4}
 \beamer@sectionintoc {5}{Bonus: javascript with R}{7}{0}{5}
-\beamer@sectionintoc {6}{Sources}{8}{0}{6}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.26)  31 MAY 2013 10:30
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.26)  31 MAY 2013 10:43
 entering extended mode
 **presentation.tex
 (C:\Users\Jim\Documents\GitHub\r-meetup-rattle\doc\presentation.tex
@@ -1267,37 +1267,34 @@ Non-PDF special ignored!] [2
 ] [7
 
 ]
-No file presentation.bbl.
-[8
-
-]
 \tf@nav=\write7
 \tf@toc=\write8
 \tf@snm=\write9
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 170.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 170.
- (C:\Users\Jim\Documents\GitHub\r-meetup-rattle\doc\presentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 170.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 170.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 186.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 186.
+
+(C:\Users\Jim\Documents\GitHub\r-meetup-rattle\doc\presentation.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 186.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 186.
 Package rerunfilecheck Info: File `presentation.out' has not changed.
-(rerunfilecheck)             Checksum: AFB0D9C6CE5B11158E25519213166099;299.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 170.
+(rerunfilecheck)             Checksum: 4362CD9D3553CCF19C4F35DEAAAB273A;256.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 186.
  ) 
 Here is how much of TeX's memory you used:
- 19138 strings out of 493921
- 343594 string characters out of 3144882
- 428455 words of memory out of 3000000
- 21919 multiletter control sequences out of 15000+200000
- 23977 words of font info for 51 fonts, out of 3000000 for 9000
+ 19125 strings out of 493921
+ 343479 string characters out of 3144882
+ 427455 words of memory out of 3000000
+ 21911 multiletter control sequences out of 15000+200000
+ 22482 words of font info for 50 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  49i,15n,60p,402b,553s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><
 C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/
 Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Prog
 ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb>
-Output written on presentation.pdf (8 pages, 128486 bytes).
+Output written on presentation.pdf (7 pages, 122243 bytes).
 PDF statistics:
- 332 PDF objects out of 1000 (max. 8388607)
- 23 named destinations out of 1000 (max. 500000)
- 131 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 289 PDF objects out of 1000 (max. 8388607)
+ 20 named destinations out of 1000 (max. 500000)
+ 123 words of extra memory for PDF output out of 10000 (max. 10000000)
 
