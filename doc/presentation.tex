@@ -100,6 +100,19 @@ Three topics for data exploration:
 Bonus: R + javascript for geomapping
 \end{block}
  
+ \newpage
+ \begin{block}{Exploratory Data Analysis (EDA)}
+\begin{itemize}
+\item EDA is the process of exploring, scrubing, and munging your data for analysis
+\item This presentation is a brief overview of how to use free and available tools in R for quickly exploring datasets
+\item Always work toward functionalizing repeatable task. 
+\begin{itemize}
+\item Much of EDA is a repeated on all of the datasets that you work with
+\item Read between the lines in the following overviews to see ways for functionalizing and packaging your EDA steps
+\item As a broad generalazation, use rattle to find tools that work for you, use knitr to make books of the techniques that work for you, and use shiny to separate the views from the models, and the controllers that move the models
+\end{itemize}
+\end{itemize}
+\end{block}
 \end{frame}
 
 \section{Topics: rattle}
@@ -143,6 +156,7 @@ copy and paste rattle log into block
 
 \begin{itemize}
 \item Convert crs and crv to list()
+\item Make sure to load data that you sent to rattle (here data(iris))
 \item Still working out kinks with plots
 \end{itemize}
 \begin{block}{Overview }
@@ -154,10 +168,10 @@ Tip: use cat() to write out .tex and looping to create integrated EDA
 
 \section{Topics: shiny}
 \begin{frame}[t,allowframebreaks]{shiny}
-\begin{block}{Make it work}
+\begin{block}{Overview}
 Interactivity is where data science is headed. shiny is easy way to interact your models and your views. 
 \end{block}
-
+One of the things that I would like to see data science work towards is separating models, controllers, and views
 \begin{block}{Make it work}
 Live demo 
 \end{block}

@@ -6,30 +6,34 @@
 \headcommand {\beamer@subsectionpages {1}{1}}
 \headcommand {\slideentry {1}{0}{2}{2/2}{}{0}}
 \headcommand {\beamer@framepages {2}{2}}
-\headcommand {\sectionentry {2}{Topics: rattle}{3}{Topics: rattle}{0}}
-\headcommand {\beamer@sectionpages {2}{2}}
-\headcommand {\beamer@subsectionpages {2}{2}}
-\headcommand {\slideentry {2}{0}{3}{3/3}{}{0}}
-\headcommand {\beamer@framepages {3}{3}}
-\headcommand {\slideentry {2}{0}{3}{3/4}{}{0}}
-\headcommand {\beamer@framepages {3}{4}}
-\headcommand {\sectionentry {3}{Topics: knitr}{5}{Topics: knitr}{0}}
-\headcommand {\beamer@sectionpages {3}{4}}
-\headcommand {\beamer@subsectionpages {3}{4}}
-\headcommand {\slideentry {3}{0}{4}{5/5}{}{0}}
-\headcommand {\beamer@framepages {5}{5}}
-\headcommand {\sectionentry {4}{Topics: shiny}{6}{Topics: shiny}{0}}
-\headcommand {\beamer@sectionpages {5}{5}}
-\headcommand {\beamer@subsectionpages {5}{5}}
-\headcommand {\slideentry {4}{0}{5}{6/6}{}{0}}
+\headcommand {\slideentry {1}{0}{2}{2/3}{}{0}}
+\headcommand {\beamer@framepages {2}{3}}
+\headcommand {\sectionentry {2}{Topics: rattle}{4}{Topics: rattle}{0}}
+\headcommand {\beamer@sectionpages {2}{3}}
+\headcommand {\beamer@subsectionpages {2}{3}}
+\headcommand {\slideentry {2}{0}{3}{4/4}{}{0}}
+\headcommand {\beamer@framepages {4}{4}}
+\headcommand {\slideentry {2}{0}{3}{4/5}{}{0}}
+\headcommand {\beamer@framepages {4}{5}}
+\headcommand {\sectionentry {3}{Topics: knitr}{6}{Topics: knitr}{0}}
+\headcommand {\beamer@sectionpages {4}{5}}
+\headcommand {\beamer@subsectionpages {4}{5}}
+\headcommand {\slideentry {3}{0}{4}{6/6}{}{0}}
 \headcommand {\beamer@framepages {6}{6}}
-\headcommand {\sectionentry {5}{Bonus: javascript with R}{7}{Bonus: javascript with R}{0}}
-\headcommand {\beamer@sectionpages {6}{6}}
-\headcommand {\beamer@subsectionpages {6}{6}}
-\headcommand {\slideentry {5}{0}{6}{7/7}{}{0}}
-\headcommand {\beamer@framepages {7}{7}}
-\headcommand {\beamer@partpages {1}{7}}
-\headcommand {\beamer@subsectionpages {7}{7}}
-\headcommand {\beamer@sectionpages {7}{7}}
-\headcommand {\beamer@documentpages {7}}
-\headcommand {\def \inserttotalframenumber {7}}
+\headcommand {\slideentry {3}{0}{4}{6/7}{}{0}}
+\headcommand {\beamer@framepages {6}{7}}
+\headcommand {\sectionentry {4}{Topics: shiny}{8}{Topics: shiny}{0}}
+\headcommand {\beamer@sectionpages {6}{7}}
+\headcommand {\beamer@subsectionpages {6}{7}}
+\headcommand {\slideentry {4}{0}{5}{8/8}{}{0}}
+\headcommand {\beamer@framepages {8}{8}}
+\headcommand {\sectionentry {5}{Bonus: javascript with R}{9}{Bonus: javascript with R}{0}}
+\headcommand {\beamer@sectionpages {8}{8}}
+\headcommand {\beamer@subsectionpages {8}{8}}
+\headcommand {\slideentry {5}{0}{6}{9/9}{}{0}}
+\headcommand {\beamer@framepages {9}{9}}
+\headcommand {\beamer@partpages {1}{9}}
+\headcommand {\beamer@subsectionpages {9}{9}}
+\headcommand {\beamer@sectionpages {9}{9}}
+\headcommand {\beamer@documentpages {9}}
+\headcommand {\def \inserttotalframenumber {9}}
